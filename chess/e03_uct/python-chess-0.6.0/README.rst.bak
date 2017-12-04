@@ -1,4 +1,4 @@
-1python-chess: a pure Python chess library
+python-chess: a pure Python chess library
 =========================================
 
 .. image:: https://travis-ci.org/niklasf/python-chess.svg?branch=master
