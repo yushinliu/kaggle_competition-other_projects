@@ -286,8 +286,151 @@ Pro-gramm-aus-schnitt Mi-kro-fon-sig-nal}
 
 % *****************************************************************
 % -------------------> start writing here <------------------------
+\chapter{Prostate Cancer Segmentation}
+\section{Motivation}
+In the recently years, classification algorithms become more and more influence in the area of medical signal processing. Here we received different 3D image datasets from 14 patients and we implemented different classifier algorithms on the datasets to approach automatic prostate cancer segmentation(Separate cancer area and non-cancer area by algorithm selves). Before start, we can have a pre-view about the medical datasets. 
 
-\chapter{Introduction}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.32]{image/Kep}
+	\includegraphics[scale=0.32]{image/Pet}
+	\includegraphics[scale=0.32]{image/ktrans}
+	\includegraphics[scale=0.32]{image/T2_weighted}
+	\includegraphics[scale=0.32]{image/ADC}
+	\caption{Visualization of 5 different 3D images from left to right: $K_{EP}$ , $PET$ , $K_{trans}$ , $T2 weighted MR$ , $ADC$ }
+	\label{5features}
+\end{figure}
+
+Refer to Fig.\ref{5features}, it visualize 5 different image from medical datasets and what we are going to do in the first step is to extract the features before classifications .
+
+\section{Task Overview}
+Fig.\ref{feature_ext} reveals our process of Task.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.6]{image/task1_pipeline}
+	\caption{Pipeline of Prostate Cancer Segmentation}
+	\label{feature_ext}
+\end{figure}
+
+\section{Extract prostate region}
+We have seen the 5 different feature images in previous section. But the image we have seen contains feature vectors from regions with both prostate issue and non-prostate issue. In the Fig.\ref{prostate}, the area with blue and red colors is the prostate area and blue color represents non-cancer area while red color represents cancer area respectively. We have to extract the prostate area because non-prostate area will not be considered in the classification.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.6]{image/prostate}
+	\caption{Prostate area in the medical feature image}
+	\label{prostate}
+\end{figure}
+
+The datasets of 14 patients actually can be divided into 2 parts, the labels of 1-11 stuck are made by 2 experts and the labels of 12-14 stuck are historical labels . So for the labels from last 3 datasets, we can directly choose the labels equal to 1 or 2 as prostate area because historical labels can be regarded as ground-truth. For the labels from first 11 datasets, we define the principle that :
+
+\begin{align}
+m_{c}=\lbrace^{0\ \ if\ m_{1} \neq m_{2}}_{m_{1}\ \ if\ m_{1}=m_{2}}
+\end{align}
+ 
+The equation means that if expert A and expert B has the same conclusion on the voxel, we will take it into ground-truth dataset, otherwise abandon this voxel.
+
+\subsection{Feature Normalization}
+As we known , some classification algorithm are sensitive with the scales of features. Differences between features' value range will cause the inaccuracy to the result. To avoid that , we implement feature normalization and we select the standardization as the method:
+
+\begin{align}
+\tilde{x}_{k}=\frac{x_{k}-\mu_{k}}{\delta_{k}}
+\end{align}
+
+Because scaling each dimension of the feature vector to zero mean and unit variance makes scaled features still fitting their original distribution.
+
+\subsection{Outlier detection and removal}
+However, even in the ground-truth datasets there is still a lot of anomaly samples in the dataset, these anomaly samples are so called outliers. Some of classifiers are also sensitive to the outliers. For instances, outliers will lead Nearst-Mean classifier to inaccuracy because the classifier will estimate wrong class centers $\underline{\hat{\mu}}_{k}$ when outliers within.
+
+Outliers didn't follow the patterns of majority of samples, so it is hard to detect them in a simple way , the classical method to detect outliers is to compute the Mahalanobis distance of each sample:
+
+\begin{align}
+MD_i=\sqrt{(x_{i}-\mu)C^{-1}(x_{i}-\mu)^T}
+\end{align}
+
+the mahalanobis distance illustrates the distance between class center and samples, also considering the distribution shape of datasets. After computing the mahalanobis distances, we then implement $\chi^{2}$ distribution and compute the tolerance ellipse with cutoff value(setup w.r.t $\chi^{2}$'s quantile). There is no simple way to find an optimal number for cutoff value or $\chi^{2}$'s quantiles, only to visualize them. Fig.\ref{maha_outlier} shows our detection result using mahalanobis distance with different $\chi^{2}$'s quantiles.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.45]{image/maha_outlier}
+	\caption{Detection of Outliers at different $\chi^{2}$ quantiles}
+	\label{maha_outlier}
+\end{figure}
+
+According to the Fig.\ref{maha_outlier}, we can clearly see the cutoff values' dash line, and those samples which are above the dash line are recognized as outliers. Fig.\ref{outlier_vis} (a) also illustrate the locations of outliers, seems most of outliers locate in the center of prostate area. After detection of outliers, totally 23139 samples are sweep out from datasets.
+
+
+\begin{figure}
+	\begin{tabular}{ccc}
+		\includegraphics[scale=0.4]{image/maha_vis}&
+		\includegraphics[scale=0.4]{image/rob_vis_235}&
+		\includegraphics[scale=0.4]{image/robust_outlier_3000}\\
+		(a)&(b)&(c)\\
+	\end{tabular}	
+	\caption{Visualization of outliers based on (a) Mahalanobis distance , (b) Robust distance with $m=235$, (c) Robust distance with $m=3000$}
+	\label{outlier_vis}
+\end{figure}
+
+
+As a further step, we think about estimators of multivariate location and covariance that have a high breakdown point. We will use minimum volume ellipsoid estimato (MVE), by inserting the MVE to estimate the mean and covariance then obtain the Robust distance $RD_{I}$. See Fig.\ref{ellipse_vis},
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.6]{image/tolerance_ellipse}
+	\caption{Tolerance Ellipse based on Mahalanobis distance and Robust distance}
+	\label{ellipse_vis}
+\end{figure}
+
+ Compared with effects of obtaining Mahalanobis distance and Robust distance, the tolerance ellipse of applying Robust distance will be narrower as well as be more accurate. Here are how we define the Robust distance :
+ 
+ \begin{align}
+ RD_i=\sqrt{(x_{i}-T(X))C^{-1}(x_{i}-T(X))^T}
+ \end{align}
+ 
+  The $T(X)$ and  solution to minimize MVE is difficult to find, so we use resampling algorithm in our approach. Fig.\ref{robust_vis} shows the detection of outliers based on Robust distance. 
+  
+   \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.45]{image/robust_outlier}
+  	\caption{Visualization of outliers based on Robust distance}
+  	\label{robust_vis}
+  \end{figure}
+
+  The expectation of robust distances is obviously larger than mahalanobis distances'. Due to the same cutoff value, more samples will be recognize as outliers. After detection of outliers, totally 31936 samples are sweep out from datasets. In this approach, we set up the number of $m$ subsample equal to 253, this number is determined by a probability augment:
+  
+   \begin{align}
+ 1-(1-(1-\epsilon)^{p+1})^{m} \geq p_{0}
+  \end{align}
+  
+  But the real value of subsample number $m$ is far larger than the theoretical number. So we set up the subsample $m=3000$ , and made another detection. After detection, totally 43542 samples are recognized as outliers and the number is larger than the detection with $m=235$. But when comparing with Fig.\ref{outlier_vis} (b) and (c), we could find that the outliers are more distributed in the image applying $m=3000$ and outliers are more concentrated in the image (b).It makes more sense that outliers are distributed widely instead of gathering in the one part of feature vectors.
+  
+ \section{Enhancement}
+ We want to make further process to improve the performance of the algorithm so we implement one of the ensemble learning algorithms : Bagging classifier. Fig.\ref{bagging} illustrates the procedure of the bagging classifier. This algorithm can not reduce the bias of original model because 
+ 
+  \begin{align}
+ E[\frac{\sum X_{i}}{n}]=E[X_{i}]
+  \end{align}
+ 
+ But the variance change through the bagging shows below:
+ 
+   \begin{align}
+ Var[\frac{\sum X_{i}}{n}]=Var[\frac{X_{i}}{n}]
+ \end{align}
+ 
+ According to the equation, the variance is significant reduced, this is because of the independences between child-models whose training data is random sampling from the whole dataset. Table.
+ 
+ We also tried the using Stacking to combined NN,kNN and SVM classifiers but performance is not so well. The reason is that Stacking is sensitive with the diversity of models. In future work, we shall try some different types of model and apply Stacking on them to improve the performance.
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[scale=0.7]{image/bagging}
+ 	\caption{The process of bagging classifier}
+ 	\label{bagging}
+ \end{figure}
+ 
+
+\chapter{Task2}
 \section{Evaluation}
 In last section we built up our generation and identification model and in order to get best performance of the model, It is necessary to analysis the hyper-parameters. We applied grid-search method on the parameters including SNR (Signal Noise Ratio), Maximum iterations and covariance types. All of these parameters may have significant impact on the model performance.
 \subsection{Signal Noise Ratio Analysis}
@@ -400,9 +543,12 @@ Finally, we find out the parameters with best performance lets see how good it i
 	\end{tabular}
 \end{table}
 
-Due to the Table.\ref{misid}, we found no gender misidentified(one gender misidentified to the other one) and our custom voice (last 2 speakers) are both identified correctly.In addition, We observe from cross validations with different parameters that most misidentified speakers are male, so we suppose that low frequency voice (the voice from most male has lower frequency than from most female) is a little bit difficult to be identified correctly in our model, it can be improved in future work.
+Due to the Table.\ref{misid}, we found no gender misidentified(one gender misidentified to the other one) and our custom voice (last 2 speakers) are both identified correctly.In addition, We observe from more cross validations with different parameters that most misidentified speakers are male, so we suppose that low frequency voice (the voice from most male has lower frequency than from most female) is a little bit difficult to be identified correctly in our model, it can be improved in future work.
 
 \section{Enhancement}
+\subsection{Code Optimization}
+In comparison with using Matlab, Python has a big disadvantage that it is not good at handling large-size dataset. Although we transfered all the possible For-loops into Matrix computation, we still cost a lot of time on code implementation. To solve that the simplest way is to find a common-use api from good packages such as sklearn, scipy. We tried sklearn.gmm instead of mathematical implementation by ourselves and the speed rise to 50 times faster than before. However, api's framework is fixed and it can not fixed everything so our next approach is to write a Cython script to transfer *.py file into *.c and extend to .pyd. This method works well and the transfered code speed up 5 times faster than before.
+\subsection{Open-set,Text-independent Speaker Identification}
 From the content of previous sections, we have achieved high accuracy of Speaker identification among known speakers or we could see speakers registered in our model. However this model is not realistic because if there is an unknown speaker, the model will pair the unknown speaker to one of registered ID and it is obviously incorrect. So unregistered speaker identification is always tough challenge of general Speaker Identification. In order to solve that, we used OSTI-SI (Open-set,Text-independent Speaker Identification), evaluated the error rate and finally optimal the performance of Identification model.
 
 Before start, we selected first 3 files of TIMIT's Training set ($dr1,dr2,dr3$) as unknown speakers' voice set. Table.\ref{enh_data} shows the people number, gender distribution of selected unknown speakers and in contrast with registered speakers.

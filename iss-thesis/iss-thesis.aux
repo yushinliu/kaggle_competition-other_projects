@@ -17,43 +17,70 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Prostate Cancer Segmentation}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Evaluation}{1}{section.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Signal Noise Ratio Analysis}{1}{subsection.1.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Convergence Analysis}{1}{subsection.1.1.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Detection Rate with different SNR threshold\relax }}{1}{table.caption.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Task Overview}{1}{section.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Extract prostate region}{1}{section.1.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Visualization of 5 different 3D images from left to right: $K_{EP}$ , $PET$ , $K_{trans}$ , $T2 weighted MR$ , $ADC$ \relax }}{1}{figure.caption.2}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{SNR}{{1.1}{1}{Detection Rate with different SNR threshold\relax }{table.caption.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.2}{\ignorespaces Performance \& Convergence Analysis with FULL covariance type\relax }}{2}{table.caption.3}}
-\newlabel{fullcov}{{1.2}{2}{Performance \& Convergence Analysis with FULL covariance type\relax }{table.caption.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.3}{\ignorespaces Performance \& Convergence Analysis with DIAGONAL covariance type\relax }}{2}{table.caption.4}}
-\newlabel{diagcov}{{1.3}{2}{Performance \& Convergence Analysis with DIAGONAL covariance type\relax }{table.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces  Variation of Detection Rate with different covariance types in models\relax }}{3}{figure.caption.5}}
-\newlabel{detect_cov}{{1.1}{3}{Variation of Detection Rate with different covariance types in models\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.3}Result Evaluation}{3}{subsection.1.1.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces  GMM distribution Different Covariance Types\relax }}{4}{figure.caption.6}}
-\newlabel{cov_type}{{1.2}{4}{GMM distribution Different Covariance Types\relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Confusion Matrix Plot of 170 Speakers\relax }}{4}{figure.caption.7}}
-\newlabel{con_mat}{{1.3}{4}{Confusion Matrix Plot of 170 Speakers\relax }{figure.caption.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.4}{\ignorespaces Details of the misidentification\relax }}{4}{table.caption.8}}
-\newlabel{misid}{{1.4}{4}{Details of the misidentification\relax }{table.caption.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.5}{\ignorespaces Configuration of the OSTI-SI Dataset\relax }}{5}{table.caption.9}}
-\newlabel{enh_data}{{1.5}{5}{Configuration of the OSTI-SI Dataset\relax }{table.caption.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Enhancement}{5}{section.1.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Overview of the open-set, text-independent speaker identification process\relax }}{6}{figure.caption.10}}
-\newlabel{OSIE}{{1.4}{6}{Overview of the open-set, text-independent speaker identification process\relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Variation of error rates in OSTI-SI with threshold\relax }}{7}{figure.caption.11}}
-\newlabel{enhancement}{{1.5}{7}{Variation of error rates in OSTI-SI with threshold\relax }{figure.caption.11}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Additionally}{9}{appendix.A}}
+\newlabel{5features}{{1.1}{1}{Visualization of 5 different 3D images from left to right: $K_{EP}$ , $PET$ , $K_{trans}$ , $T2 weighted MR$ , $ADC$ \relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Pipeline of Prostate Cancer Segmentation\relax }}{2}{figure.caption.3}}
+\newlabel{feature_ext}{{1.2}{2}{Pipeline of Prostate Cancer Segmentation\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Prostate area in the medical feature image\relax }}{2}{figure.caption.4}}
+\newlabel{prostate}{{1.3}{2}{Prostate area in the medical feature image\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Feature Normalization}{3}{subsection.1.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Outlier detection and removal}{3}{subsection.1.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Detection of Outliers at different $\chi ^{2}$ quantiles\relax }}{4}{figure.caption.5}}
+\newlabel{maha_outlier}{{1.4}{4}{Detection of Outliers at different $\chi ^{2}$ quantiles\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Visualization of outliers based on (a) Mahalanobis distance , (b) Robust distance with $m=235$, (c) Robust distance with $m=3000$\relax }}{4}{figure.caption.6}}
+\newlabel{outlier_vis}{{1.5}{4}{Visualization of outliers based on (a) Mahalanobis distance , (b) Robust distance with $m=235$, (c) Robust distance with $m=3000$\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Tolerance Ellipse based on Mahalanobis distance and Robust distance\relax }}{5}{figure.caption.7}}
+\newlabel{ellipse_vis}{{1.6}{5}{Tolerance Ellipse based on Mahalanobis distance and Robust distance\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Visualization of outliers based on Robust distance\relax }}{6}{figure.caption.8}}
+\newlabel{robust_vis}{{1.7}{6}{Visualization of outliers based on Robust distance\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces The process of bagging classifier\relax }}{7}{figure.caption.9}}
+\newlabel{bagging}{{1.8}{7}{The process of bagging classifier\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Enhancement}{7}{section.1.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Task2}{9}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Figures}{11}{chapter*.12}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Evaluation}{9}{section.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Signal Noise Ratio Analysis}{9}{subsection.2.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Convergence Analysis}{9}{subsection.2.1.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Detection Rate with different SNR threshold\relax }}{9}{table.caption.10}}
+\newlabel{SNR}{{2.1}{9}{Detection Rate with different SNR threshold\relax }{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Performance \& Convergence Analysis with FULL covariance type\relax }}{10}{table.caption.11}}
+\newlabel{fullcov}{{2.2}{10}{Performance \& Convergence Analysis with FULL covariance type\relax }{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Performance \& Convergence Analysis with DIAGONAL covariance type\relax }}{10}{table.caption.12}}
+\newlabel{diagcov}{{2.3}{10}{Performance \& Convergence Analysis with DIAGONAL covariance type\relax }{table.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  Variation of Detection Rate with different covariance types in models\relax }}{11}{figure.caption.13}}
+\newlabel{detect_cov}{{2.1}{11}{Variation of Detection Rate with different covariance types in models\relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Result Evaluation}{11}{subsection.2.1.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  GMM distribution Different Covariance Types\relax }}{12}{figure.caption.14}}
+\newlabel{cov_type}{{2.2}{12}{GMM distribution Different Covariance Types\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Confusion Matrix Plot of 170 Speakers\relax }}{12}{figure.caption.15}}
+\newlabel{con_mat}{{2.3}{12}{Confusion Matrix Plot of 170 Speakers\relax }{figure.caption.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Details of the misidentification\relax }}{12}{table.caption.16}}
+\newlabel{misid}{{2.4}{12}{Details of the misidentification\relax }{table.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces Configuration of the OSTI-SI Dataset\relax }}{13}{table.caption.17}}
+\newlabel{enh_data}{{2.5}{13}{Configuration of the OSTI-SI Dataset\relax }{table.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Enhancement}{13}{section.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Code Optimization}{13}{subsection.2.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Open-set,Text-independent Speaker Identification}{13}{subsection.2.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Overview of the open-set, text-independent speaker identification process\relax }}{14}{figure.caption.18}}
+\newlabel{OSIE}{{2.4}{14}{Overview of the open-set, text-independent speaker identification process\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Variation of error rates in OSTI-SI with threshold\relax }}{15}{figure.caption.19}}
+\newlabel{enhancement}{{2.5}{15}{Variation of error rates in OSTI-SI with threshold\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Additionally}{17}{appendix.A}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Figures}{19}{chapter*.20}}
 \bibstyle{IEEEtran_ISS}
 \bibdata{refs}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Tables}{13}{chapter*.13}}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{15}{chapter*.14}}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Tables}{21}{chapter*.21}}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{23}{chapter*.22}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \global\csname @altsecnumformattrue\endcsname

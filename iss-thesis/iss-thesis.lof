@@ -1,8 +1,17 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Variation of Detection Rate with different covariance types in models\relax }}{3}{figure.caption.5}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces GMM distribution Different Covariance Types\relax }}{4}{figure.caption.6}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Confusion Matrix Plot of 170 Speakers\relax }}{4}{figure.caption.7}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Overview of the open-set, text-independent speaker identification process\relax }}{6}{figure.caption.10}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Variation of error rates in OSTI-SI with threshold\relax }}{7}{figure.caption.11}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Visualization of 5 different 3D images from left to right: $K_{EP}$ , $PET$ , $K_{trans}$ , $T2 weighted MR$ , $ADC$ \relax }}{1}{figure.caption.2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Pipeline of Prostate Cancer Segmentation\relax }}{2}{figure.caption.3}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Prostate area in the medical feature image\relax }}{2}{figure.caption.4}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Detection of Outliers at different $\chi ^{2}$ quantiles\relax }}{4}{figure.caption.5}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Visualization of outliers based on (a) Mahalanobis distance , (b) Robust distance with $m=235$, (c) Robust distance with $m=3000$\relax }}{4}{figure.caption.6}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Tolerance Ellipse based on Mahalanobis distance and Robust distance\relax }}{5}{figure.caption.7}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Visualization of outliers based on Robust distance\relax }}{6}{figure.caption.8}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces The process of bagging classifier\relax }}{7}{figure.caption.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Variation of Detection Rate with different covariance types in models\relax }}{11}{figure.caption.13}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces GMM distribution Different Covariance Types\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Confusion Matrix Plot of 170 Speakers\relax }}{12}{figure.caption.15}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Overview of the open-set, text-independent speaker identification process\relax }}{14}{figure.caption.18}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Variation of error rates in OSTI-SI with threshold\relax }}{15}{figure.caption.19}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.7)  4 FEB 2018 01:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.7)  6 FEB 2018 22:33
 entering extended mode
 **./iss-thesis.tex
 (iss-thesis.tex
@@ -932,13 +932,13 @@ LaTeX Info: Redefining \nameref on input line 275.
 \openout3 = `iss-thesis.out'.
 
 
-<university-logo.pdf, id=43, 57.21375pt x 57.21375pt>
+<university-logo.pdf, id=79, 57.21375pt x 57.21375pt>
 File: university-logo.pdf Graphic file (type pdf)
 
 <use university-logo.pdf>
 Package pdftex.def Info: university-logo.pdf used on input line 280.
 (pdftex.def)             Requested size: 56.9055pt x 56.90804pt.
- <isslogocolor.pdf, id=44, 291.0875pt x 219.82124pt>
+ <isslogocolor.pdf, id=80, 291.0875pt x 219.82124pt>
 File: isslogocolor.pdf Graphic file (type pdf)
 
 <use isslogocolor.pdf>
@@ -1005,84 +1005,187 @@ File: t1txtt.fd 2000/12/15 v3.1
 
 ]
 chapter 1.
+<image/Kep.png, id=125, 260.975pt x 264.99pt>
+File: image/Kep.png Graphic file (type png)
+ <use image/Kep.png>
+Package pdftex.def Info: image/Kep.png used on input line 295.
+(pdftex.def)             Requested size: 83.5137pt x 84.79852pt.
 
-Overfull \hbox (25.72289pt too wide) in paragraph at lines 318--334
+<image/Pet.png, id=127, 260.975pt x 264.99pt>
+File: image/Pet.png Graphic file (type png)
+ <use image/Pet.png>
+Package pdftex.def Info: image/Pet.png used on input line 296.
+(pdftex.def)             Requested size: 83.5137pt x 84.79852pt.
+
+<image/ktrans.png, id=128, 260.975pt x 264.99pt>
+File: image/ktrans.png Graphic file (type png)
+ <use image/ktrans.png>
+Package pdftex.def Info: image/ktrans.png used on input line 297.
+(pdftex.def)             Requested size: 83.5137pt x 84.79852pt.
+
+<image/T2_weighted.png, id=129, 260.975pt x 264.99pt>
+File: image/T2_weighted.png Graphic file (type png)
+
+<use image/T2_weighted.png>
+Package pdftex.def Info: image/T2_weighted.png used on input line 298.
+(pdftex.def)             Requested size: 83.5137pt x 84.79852pt.
+ <image/ADC.png, id=130, 260.975pt x 264.99pt>
+File: image/ADC.png Graphic file (type png)
+
+<use image/ADC.png>
+Package pdftex.def Info: image/ADC.png used on input line 299.
+(pdftex.def)             Requested size: 83.5137pt x 84.79852pt.
+
+<image/task1_pipeline.png, id=133, 857.64664pt x 453.44629pt>
+File: image/task1_pipeline.png Graphic file (type png)
+
+<use image/task1_pipeline.png>
+Package pdftex.def Info: image/task1_pipeline.png used on input line 312.
+(pdftex.def)             Requested size: 514.59195pt x 272.06987pt.
+
+Overfull \hbox (71.94829pt too wide) in paragraph at lines 312--313
  [][] 
  []
 
-
-Overfull \hbox (25.72289pt too wide) in paragraph at lines 340--356
- [][] 
- []
+<image/prostate.png, id=135, 258.9675pt x 252.945pt>
+File: image/prostate.png Graphic file (type png)
+ <use image/prostate.png>
+Package pdftex.def Info: image/prostate.png used on input line 322.
+(pdftex.def)             Requested size: 155.38168pt x 151.76816pt.
 
 [1
 
 
-] [2] <image/detect_cov.png, id=99, 1072.005pt x 599.23875pt>
-File: image/detect_cov.png Graphic file (type png)
+ <./image/Kep.png> <./image/Pet.png> <./image/ktrans.png> <./image/T2_weighted.
+png> <./image/ADC.png>] [2 <./image/task1_pipeline.png> <./image/prostate.png>]
+ <image/maha_outlier.png, id=158, 956.57375pt x 739.76375pt>
+File: image/maha_outlier.png Graphic file (type png)
 
-<use image/detect_cov.png>
-Package pdftex.def Info: image/detect_cov.png used on input line 362.
-(pdftex.def)             Requested size: 428.7944pt x 239.69125pt.
+<use image/maha_outlier.png>
+Package pdftex.def Info: image/maha_outlier.png used on input line 357.
+(pdftex.def)             Requested size: 430.45421pt x 332.89061pt.
 
-<image/cov_type.png, id=103, 671.50874pt x 358.33875pt>
-File: image/cov_type.png Graphic file (type png)
+<image/maha_vis.png, id=161, 311.1625pt x 252.945pt>
+File: image/maha_vis.png Graphic file (type png)
+ <use image/maha_vis.png>
+Package pdftex.def Info: image/maha_vis.png used on input line 367.
+(pdftex.def)             Requested size: 124.46278pt x 101.17621pt.
 
-<use image/cov_type.png>
-Package pdftex.def Info: image/cov_type.png used on input line 370.
-(pdftex.def)             Requested size: 335.75356pt x 179.16893pt.
+<image/rob_vis_235.png, id=162, 311.1625pt x 252.945pt>
+File: image/rob_vis_235.png Graphic file (type png)
 
-<image/confusion_matrix.jpeg, id=106, 1806.75pt x 972.63374pt>
-File: image/confusion_matrix.jpeg Graphic file (type jpg)
+<use image/rob_vis_235.png>
+Package pdftex.def Info: image/rob_vis_235.png used on input line 368.
+(pdftex.def)             Requested size: 124.46278pt x 101.17621pt.
 
-<use image/confusion_matrix.jpeg>
-Package pdftex.def Info: image/confusion_matrix.jpeg used on input line 382.
-(pdftex.def)             Requested size: 542.02919pt x 291.79237pt.
+<image/robust_outlier_3000.png, id=163, 311.1625pt x 252.945pt>
+File: image/robust_outlier_3000.png Graphic file (type png)
 
-Overfull \hbox (99.38553pt too wide) in paragraph at lines 382--383
- [][] 
- []
+<use image/robust_outlier_3000.png>
+Package pdftex.def Info: image/robust_outlier_3000.png used on input line 369.
+(pdftex.def)             Requested size: 124.46278pt x 101.17621pt.
 
-[3 <./image/detect_cov.png>] [4 <./image/cov_type.png> <./image/confusion_matri
-x.jpeg>] <image/ProcessOSIE.jpg, id=125, 672.17496pt x 400.363pt>
-File: image/ProcessOSIE.jpg Graphic file (type jpg)
+<image/tolerance_ellipse.png, id=165, 442.5738pt x 326.81389pt>
+File: image/tolerance_ellipse.png Graphic file (type png)
 
-<use image/ProcessOSIE.jpg>
-Package pdftex.def Info: image/ProcessOSIE.jpg used on input line 428.
-(pdftex.def)             Requested size: 403.30809pt x 240.21965pt.
- [5]
-<image/enhancement.png, id=135, 962.59625pt x 733.74126pt>
-File: image/enhancement.png Graphic file (type png)
+<use image/tolerance_ellipse.png>
+Package pdftex.def Info: image/tolerance_ellipse.png used on input line 381.
+(pdftex.def)             Requested size: 265.54633pt x 196.08983pt.
+ [3] [4 <./image/maha_outlier.png> <./image/maha_vis.png> <./image/rob_vis_235.
+png> <./image/robust_outlier_3000.png>]
+<image/robust_outlier.png, id=189, 956.57375pt x 739.76375pt>
+File: image/robust_outlier.png Graphic file (type png)
 
-<use image/enhancement.png>
-Package pdftex.def Info: image/enhancement.png used on input line 455.
-(pdftex.def)             Requested size: 481.29695pt x 366.86974pt.
+<use image/robust_outlier.png>
+Package pdftex.def Info: image/robust_outlier.png used on input line 396.
+(pdftex.def)             Requested size: 430.45421pt x 332.89061pt.
+ [5 <./image/tolerance_ellipse.png>] [6 <./image/robust_outlier.png>] <image/ba
+gging.png, id=206, 524.43716pt x 264.77681pt>
+File: image/bagging.png Graphic file (type png)
 
-Overfull \hbox (38.65329pt too wide) in paragraph at lines 455--456
- [][] 
- []
-
-[6 <./image/ProcessOSIE.jpg>] [7 <./image/enhancement.png>] [8
+<use image/bagging.png>
+Package pdftex.def Info: image/bagging.png used on input line 427.
+(pdftex.def)             Requested size: 367.1035pt x 185.3425pt.
+ [7 <./image/bagging.png>] [8
 
 
 ]
+chapter 2.
+
+Overfull \hbox (25.72289pt too wide) in paragraph at lines 461--477
+ [][] 
+ []
+
+
+Overfull \hbox (25.72289pt too wide) in paragraph at lines 483--499
+ [][] 
+ []
+
+[9] [10] <image/detect_cov.png, id=235, 1072.005pt x 599.23875pt>
+File: image/detect_cov.png Graphic file (type png)
+
+<use image/detect_cov.png>
+Package pdftex.def Info: image/detect_cov.png used on input line 505.
+(pdftex.def)             Requested size: 428.7944pt x 239.69125pt.
+
+<image/cov_type.png, id=238, 671.50874pt x 358.33875pt>
+File: image/cov_type.png Graphic file (type png)
+
+<use image/cov_type.png>
+Package pdftex.def Info: image/cov_type.png used on input line 513.
+(pdftex.def)             Requested size: 335.75356pt x 179.16893pt.
+
+<image/confusion_matrix.jpeg, id=241, 1806.75pt x 972.63374pt>
+File: image/confusion_matrix.jpeg Graphic file (type jpg)
+
+<use image/confusion_matrix.jpeg>
+Package pdftex.def Info: image/confusion_matrix.jpeg used on input line 525.
+(pdftex.def)             Requested size: 542.02919pt x 291.79237pt.
+
+Overfull \hbox (99.38553pt too wide) in paragraph at lines 525--526
+ [][] 
+ []
+
+[11 <./image/detect_cov.png>] [12 <./image/cov_type.png> <./image/confusion_mat
+rix.jpeg>] <image/ProcessOSIE.jpg, id=259, 672.17496pt x 400.363pt>
+File: image/ProcessOSIE.jpg Graphic file (type jpg)
+
+<use image/ProcessOSIE.jpg>
+Package pdftex.def Info: image/ProcessOSIE.jpg used on input line 574.
+(pdftex.def)             Requested size: 403.30809pt x 240.21965pt.
+ [13]
+<image/enhancement.png, id=268, 962.59625pt x 733.74126pt>
+File: image/enhancement.png Graphic file (type png)
+
+<use image/enhancement.png>
+Package pdftex.def Info: image/enhancement.png used on input line 601.
+(pdftex.def)             Requested size: 481.29695pt x 366.86974pt.
+
+Overfull \hbox (38.65329pt too wide) in paragraph at lines 601--602
+ [][] 
+ []
+
+[14 <./image/ProcessOSIE.jpg>] [15 <./image/enhancement.png>] [16]
 chapter A.
-[9] [10
+[17
+
+
+] [18
 
 
 ] (iss-thesis.lof)
 \tf@lof=\write5
 \openout5 = `iss-thesis.lof'.
 
- [11] [12
+ [19] [20
 
 
 ] (iss-thesis.lot)
 \tf@lot=\write6
 \openout6 = `iss-thesis.lot'.
 
- (iss-thesis.bbl [13]
-[14
+ (iss-thesis.bbl [21]
+[22
 
 
 ]
@@ -1091,44 +1194,45 @@ chapter without number
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 24.
 
-) [15] [16
+) [23] [24
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 510--516
+Underfull \hbox (badness 10000) in paragraph at lines 656--662
 []\T1/txr/m/n/20.74 Stuttgart, TBD Date of sign.
  []
 
-[17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 520.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 520.
+[25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 666.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 666.
  (iss-thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 520.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 520.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 666.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 666.
 Package rerunfilecheck Info: File `iss-thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 8F388544FF153700CED45DC03A8AC12D;594.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 520.
+(rerunfilecheck)             Checksum: 7AF7B4F264C0CC624A6170A092074350;1236.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 666.
  ) 
 Here is how much of TeX's memory you used:
- 11012 strings out of 493328
- 170613 string characters out of 3139125
- 358957 words of memory out of 3000000
- 14309 multiletter control sequences out of 15000+200000
- 67779 words of font info for 133 fonts, out of 3000000 for 9000
+ 11135 strings out of 493328
+ 172820 string characters out of 3139125
+ 359768 words of memory out of 3000000
+ 14382 multiletter control sequences out of 15000+200000
+ 70411 words of font info for 137 fonts, out of 3000000 for 9000
  1145 hyphenation exceptions out of 8191
  44i,15n,78p,8850b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/txfonts/rtxmi.pfb><D:/Program Files/MiKTeX 2.9/font
 s/type1/public/txfonts/rtxr.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public
-/txfonts/t1xtt.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/txsy
-.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/txsya.pfb><D:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files/MiKTeX 
-2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/u
-rw/times/utmr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on iss-thesis.pdf (21 pages, 545904 bytes).
+/txfonts/t1xtt.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/txex
+.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/txsy.pfb><D:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/txfonts/txsya.pfb><D:/Program Files/MiKT
+eX 2.9/fonts/type1/public/txfonts/txsyc.pfb><D:/Program Files/MiKTeX 2.9/fonts/
+type1/urw/times/utmb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/u
+tmr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on iss-thesis.pdf (29 pages, 1306462 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 
